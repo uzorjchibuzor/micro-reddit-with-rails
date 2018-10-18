@@ -3,4 +3,7 @@ class Post < ApplicationRecord
   has_many :comments
   validates :title, length: {maximum: 21},
                     presence:true
+
+  validates :url, length: {maximum: 50},
+                    presence:true
 end
