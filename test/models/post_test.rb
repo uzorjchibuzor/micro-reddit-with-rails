@@ -6,7 +6,7 @@ class PostTest < ActiveSupport::TestCase
   # end
 
   def setup
-
+    # @user = User.new(name:"David", email:"obele@gmail.com")
     @post = Post.new(title:"Example post", body: "Lorem Ipsum dolodfj ttjjguvkcsivyusfjk", user_id: 1)
 
   end
@@ -19,8 +19,8 @@ class PostTest < ActiveSupport::TestCase
     assert_not @post.valid?
   end
    test "title should not be too long" do
-    @post.title = "a"*26
-    assert_not @post.valid?
+    @post.title = "a"*2
+    assert @post.valid?
    end
 
    test "body should be present" do
