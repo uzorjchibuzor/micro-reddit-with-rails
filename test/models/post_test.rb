@@ -16,6 +16,11 @@ class PostTest < ActiveSupport::TestCase
     @post.title = "    "
     assert_not @post.valid?
   end
+  
+  test "User.post.build is valid" do
+    post = @user.posts.build();
+    assert @post.user_id == @user.id
+  end
 
   test "title should not be too long" do
     @post.title = "a"*31
