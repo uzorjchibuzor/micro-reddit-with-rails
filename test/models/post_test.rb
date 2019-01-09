@@ -22,6 +22,11 @@ class PostTest < ActiveSupport::TestCase
     assert_not @post.valid?
   end
 
+  test "post must have a user_id assigned" do
+    @post.user_id = nil
+    assert_not @post.valid?
+  end
+
   test "url should not be empty" do
     @post.url = "   "
     assert_not @post.valid?
